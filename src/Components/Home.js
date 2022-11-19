@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import "../style/home.css";
 import MainNav from "./MainNav";
 import Footer from "./Footer";
-import { client } from "../client";
+// import { client } from "../client";
 
 const Home = () => {
   // Practice Start
-  const [post, setPost] = useState([]);
-  const getAllEntries = async () => {
-    try {
-      await client.getEntries().then((entries) => {
-        const result = entries;
-        console.log(entries);
-        setPost(result);
-        console.log(post);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    getAllEntries();
-  }, []);
+//   const [post, setPost] = useState([]);
+//   const getAllEntries = async () => {
+//     try {
+//       await client.getEntries().then((entries) => {
+//         const result = entries;
+//         console.log(entries);
+//         setPost(result);
+//         console.log(post);
+//       });
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+//   useEffect(() => {
+//     getAllEntries();
+//   }, []);
   return (
     <>
       <MainNav />
@@ -65,22 +65,22 @@ const Home = () => {
           </div>
 
           {/* Top Company Start */}
-          <div className="companyMain">
-            {post?.items?.map((posts, i) => {
-              return (
-                <div className="companyData" key={posts.sys.id}>
-                  <div className="companyDetails">
-                    <h3> {posts.fields.companyName} </h3>
-                    <h3> {posts.fields.companyDescription} </h3>
-                    {/* <h3> {posts.fields.companyImage.fields.title} </h3> */}
-                    <img
-                      src={posts.fields.companyImage.fields.file.url}
-                      alt="Image"
-                    />
-                  </div>
-                </div>
-              );
-            })}
+//           <div className="companyMain">
+//             {post?.items?.map((posts, i) => {
+//               return (
+//                 <div className="companyData" key={posts.sys.id}>
+//                   <div className="companyDetails">
+//                     <h3> {posts.fields.companyName} </h3>
+//                     <h3> {posts.fields.companyDescription} </h3>
+//                     {/* <h3> {posts.fields.companyImage.fields.title} </h3> */}
+//                     <img
+//                       src={posts.fields.companyImage.fields.file.url}
+//                       alt="Image"
+//                     />
+//                   </div>
+//                 </div>
+//               );
+//             })}
           </div>
 
           {/* Top Company End*/}
